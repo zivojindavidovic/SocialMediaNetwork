@@ -36,5 +36,36 @@
         <button id="register">Register</button>
     </div>
 
+    <div class="custom-modal">
+        <button id="closeModal">X</button>
+
+        <form id="registration-form">
+            <h2>Registration</h2>
+
+            <div>
+                <label for="username">Username *</label>
+                <input type="text" name="username" id="username" placeholder="Username">
+            </div>
+            <div>
+                <label for="email">Email *</label>
+                <input type="email" name="email" id="register_email" placeholder="email@example.com">
+            </div>
+            <div>
+                <label for="password">Password *</label>
+                <input type="password" name="password" id="register_password" placeholder="Password">
+            </div>
+            <div>
+                <label for="repeat_password">Repeat password: *</label>
+                <input type="password" name="repeat_password" id="repeat_password" placeholder="Password">
+            </div>
+            <div>
+                <button>Register</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="js/Validator.js"></script>
+    <script src="js/app.js"></script>
+
 </body>
 </html>
