@@ -23,6 +23,10 @@ class User{
         })
         .then(response => response.json())
         .then(data => {
+            let session = new Session();
+            session.user_id = data.id;
+            session.startSession();
+
             window.location.href = 'hexa.html';
         })
     }
