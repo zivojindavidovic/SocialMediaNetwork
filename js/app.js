@@ -1,8 +1,8 @@
 let session = new Session();
 session = session.getSession();
 
-if(session != ''){
-    window.location.href = 'heca.html';
+if (session != '') {
+    window.location.href = 'hexa.html';
 }
 
 document.querySelector('#register').addEventListener('click', () => {
@@ -25,7 +25,7 @@ let config = {
         minlength: 5,
         maxLength: 50
     },
-    'register_password':{
+    'register_password': {
         required: true,
         minlength: 7,
         maxLength: 25,
@@ -44,7 +44,7 @@ let validator = new Validator(config, '#registration-form');
 document.querySelector('#registration-form').addEventListener('submit', e => {
     e.preventDefault();
 
-    if(validator.validationPassed()){
+    if (validator.validationPassed()) {
 
         let user = new User();
         user.username = document.querySelector('#username').value;
@@ -52,7 +52,20 @@ document.querySelector('#registration-form').addEventListener('submit', e => {
         user.password = document.querySelector('#register_password').value;
         user.create();
 
-    }else{
+    } else {
         alert('Nije ok');
     }
+});
+
+document.querySelector('#loginForm').addEventListener('submit', e => {
+    e.preventDefault();
+    
+    let email = document.querySelector('#login_email').value;
+    let password = document.querySelector('#login_password').value;
+
+    let user = new User();
+    user.email = email;
+    user.password = password;
+    user.login();
+
 });

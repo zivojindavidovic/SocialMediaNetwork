@@ -12,22 +12,22 @@ class Session {
         let name = 'user_id';
         let ca = document.cookie.split(';');
 
-        for(let i = 0; i< ca.length; i++){
+        for (let i = 0; i < ca.length; i++) {
             let c = ca[i];
-            while(c.charAt(0) == ' '){
+            while (c.charAt(0) == ' ') {
                 c = c.substring(1);
             }
-            if(c.indexOf(name) == 0){
+            if (c.indexOf(name) == 0) {
                 return c.substring(name.length, c.length);
             }
         }
         return "";
     }
 
-    destroySession(){
+    destroySession() {
         let cookies = document.cookie.split(';');
 
-        for(let i = 0; i < cookies.length; i++){
+        for (let i = 0; i < cookies.length; i++) {
             let cookie = cookies[i];
             let eqPos = cookie.indexOf('=');
             let name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
