@@ -16,3 +16,9 @@ if (session_id !== '') {
 } else {
     window.location.href = '/';
 }
+
+document.querySelector('#logout').addEventListener('click', e => {
+    e.preventDefault();
+    session.destroySession();
+    window.location.href = '/';
+})
