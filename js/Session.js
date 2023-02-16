@@ -9,7 +9,7 @@ class Session {
     }
 
     getSession() {
-        let name = 'user_id';
+        let name = 'user_id=';
         let ca = document.cookie.split(';');
 
         for (let i = 0; i < ca.length; i++) {

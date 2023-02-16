@@ -1,8 +1,18 @@
 let session = new Session();
-session = session.getSession();
+session_id = session.getSession();
 
-if (session !== '') {
-    alert("You are logged in!");
+if (session_id !== '') {
+
+    async function populateUserData(){
+        let user = new User();
+        user = await user.get(session_id);
+        
+        document.querySelector('#username').innerText = user['username'];
+        document.querySelector('#email').innerText = user['email'];
+    }  
+
+    populateUserData();
+      
 } else {
     window.location.href = '/';
 }
